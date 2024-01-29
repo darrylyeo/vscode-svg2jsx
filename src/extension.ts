@@ -47,14 +47,14 @@ export const activate = (context: ExtensionContext) => {
 			provideDocumentFormattingEdits: async (document: TextDocument): Promise<TextEdit[]> => {
 				const text = document.getText()
 
-				const svg = await asyncReplace({
+				const jsx = await asyncReplace({
 					string: text,
 					regex: /<svg[^>]*>[\s\S]*?<\/svg>/g,
-					replacer: async (match) => await svgToJsx(match)
+					replacer: async (svg: string) => await svgToJsx(svg)
 				})
 
 				return [
-					TextEdit.replace(new Range(document.positionAt(0), document.positionAt(text.length)), svg)
+					TextEdit.replace(new Range(document.positionAt(0), document.positionAt(text.length)), jsx)
 				]
 			}
 		}
