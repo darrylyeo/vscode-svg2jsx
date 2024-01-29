@@ -11,6 +11,60 @@
 	],
 	"activationEvents": [],
 	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "javascript",
+				"extensions": [
+					".js"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "typescript",
+				"extensions": [
+					".ts"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "javascriptreact",
+				"extensions": [
+					".jsx"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "typescriptreact",
+				"extensions": [
+					".tsx"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"documentFormattingEditors": [
+			{
+				"languageId": "javascript",
+				"extensionId": "svg2jsx",
+				"scheme": "file"
+			},
+			{
+				"languageId": "typescript",
+				"extensionId": "svg2jsx",
+				"scheme": "file"
+			},
+			{
+				"languageId": "javascriptreact",
+				"extensionId": "svg2jsx",
+				"scheme": "file"
+			},
+			{
+				"languageId": "typescriptreact",
+				"extensionId": "svg2jsx",
+				"scheme": "file"
+			}
+		]
+	},
 	"scripts": {
 		"vscode:prepublish": "pnpm run compile",
 		"compile": "tsc -p ./",
