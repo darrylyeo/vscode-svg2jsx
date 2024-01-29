@@ -1,7 +1,6 @@
 import { ExtensionContext, languages, TextDocument, TextEdit, Range } from 'vscode'
 
-// @ts-ignore
-import svgToJsx from 'svg-to-jsx'
+import { transform } from '@svgr/core'
 
 
 const asyncReplace = async ({
@@ -50,7 +49,22 @@ export const activate = (context: ExtensionContext) => {
 				const jsx = await asyncReplace({
 					string: text,
 					regex: /<svg[^>]*>[\s\S]*?<\/svg>/g,
-					replacer: async (svg: string) => await svgToJsx(svg)
+					replacer: async (svg: string) => (
+						svg.includes('={')
+							? svg
+							: (await transform(
+								svg,
+								{
+									plugins: [
+										'@svgr/plugin-jsx',
+										'@svgr/plugin-prettier'
+									],
+									expandProps: false,
+									template: ({ jsx }, { tpl }) => tpl`${jsx}`,
+								},
+							))
+								.replace(/;\n$/, '')
+					)
 				})
 
 				return [
