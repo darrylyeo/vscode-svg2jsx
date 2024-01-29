@@ -11,14 +11,6 @@
 	],
 	"activationEvents": [],
 	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "svg2jsx.helloWorld",
-				"title": "Hello World"
-			}
-		],
-	},
 	"scripts": {
 		"vscode:prepublish": "pnpm run compile",
 		"compile": "tsc -p ./",
