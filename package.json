@@ -89,6 +89,7 @@
 		"@svgr/plugin-prettier": "^8.1.0",
 		"@types/babel__core": "^7.20.5",
 		"@types/prettier": "^3.0.0",
-		"@types/svgo": "^3.0.0"
+		"@types/svgo": "^3.0.0",
+		"prettier": "^3.2.4"
 	}
 }
