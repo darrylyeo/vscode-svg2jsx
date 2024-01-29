@@ -26,7 +26,7 @@ const asyncReplace = async ({
 
 
 export const activate = (context: ExtensionContext) => {
-	console.log('Extension "svg-to-jsx" is now active!')
+	console.log('Extension "svg2jsx" is now active!')
 
 	languages.registerDocumentFormattingEditProvider(
 		[
