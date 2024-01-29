@@ -16,9 +16,14 @@
                 "format": [ "camelCase", "PascalCase" ]
             }
         ],
-        "@typescript-eslint/semi": "warn",
+        "@typescript-eslint/semi": "off",
         "curly": "warn",
         "eqeqeq": "warn",
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "no-tabs": "off",
         "no-throw-literal": "warn",
         "semi": "off"
     },
