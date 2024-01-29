@@ -1,6 +1,6 @@
 # svg2jsx – Visual Studio Code Formatter Extension
 
-VSCode formatter extension that detects `<svg></svg>` tags in `.js` / `.ts` / `.jsx` / `.tsx` files and runs them through [`SVGR`](https://react-svgr.com), converting attributes like `class`, `fill-opacity` and `image-rendering` to `className`, `fillOpacity` and `imageRendering`, respectively.
+VSCode formatter extension that converts `<svg></svg>` tags to JSX syntax in `.js` / `.ts` / `.jsx` / `.tsx` files via [`SVGR`](https://react-svgr.com), converting attributes like `class`, `fill-opacity` and `image-rendering` to `className`, `fillOpacity` and `imageRendering`, respectively.
 
 ## Usage
 
