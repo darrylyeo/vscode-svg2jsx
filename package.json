@@ -72,7 +72,8 @@
 		"pretest": "bun run compile && bun run lint",
 		"lint": "eslint src --ext ts",
 		"test": "vscode-test",
-		"package": "vsce package --no-dependencies"
+		"package": "vsce package --no-dependencies",
+		"install": "code --install-extension *.vsix"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.85.0",
