@@ -66,12 +66,13 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "pnpm run compile",
+		"vscode:prepublish": "bun run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
-		"pretest": "pnpm run compile && pnpm run lint",
+		"pretest": "bun run compile && bun run lint",
 		"lint": "eslint src --ext ts",
-		"test": "vscode-test"
+		"test": "vscode-test",
+		"package": "vsce package --no-dependencies"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.85.0",
@@ -90,6 +91,7 @@
 		"@types/babel__core": "^7.20.5",
 		"@types/prettier": "^3.0.0",
 		"@types/svgo": "^3.0.0",
+		"@vscode/vsce": "^2.23.0",
 		"prettier": "^3.2.4"
 	}
 }
